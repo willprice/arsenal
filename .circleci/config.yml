@@ -14,6 +14,9 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
+          command: make mypy
+          name: Type check
+      - run:
           command: make test
           name: Test
 
