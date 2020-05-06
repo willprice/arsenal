@@ -1,7 +1,7 @@
 PYTHONPATH := "src:tests"
 
 .PHONY: test
-test: unit_test functional_test
+test: unit_test doctest
 	coverage combine .coverage-*
 	coverage xml
 	coverage html
