@@ -5,6 +5,7 @@
 import io
 import os
 import sys
+from itertools import chain
 from shutil import rmtree
 
 from setuptools import Command
@@ -29,7 +30,8 @@ REQUIRED = [
 ]
 
 # What packages are optional?
-EXTRAS = {"torch": ["torch>=1.5.0", "torchvision>=0.6.0"]}
+EXTRAS = {"torch": ["torch>=1.5.0", "torchvision>=0.6.0"], "video": ["moviepy>=1.0.2"]}
+EXTRAS["all"] = list(chain.from_iterable(EXTRAS.values()))
 
 # The rest you shouldn't have to touch too much :)
 # ------------------------------------------------
