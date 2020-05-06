@@ -9,11 +9,11 @@ test: unit_test doctest
 
 .PHONY: unit_test
 unit_test:
-	COVERAGE_FILE=.coverage-unit PYTHONPATH=$(PYTHONPATH) python -m pytest tests/unit --junitxml=test-results-unit.xml
+	COVERAGE_FILE=.coverage-unit PYTHONPATH=$(PYTHONPATH) python -m pytest tests/unit --junitxml=test-results/unit.xml
 
 .PHONY: doctest
 doctest:
-	COVERAGE_FILE=.coverage-doctest PYTHONPATH=$(PYTHONPATH) python -m pytest --doctest-modules src --junitxml=test-results-doctest.xml
+	COVERAGE_FILE=.coverage-doctest PYTHONPATH=$(PYTHONPATH) python -m pytest --doctest-modules src --junitxml=test-results/doctest.xml
 
 
 .PHONY: docs

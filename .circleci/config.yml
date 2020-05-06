@@ -20,8 +20,11 @@ jobs:
           command: make test
           name: Test
       - run:
-          command: bash <(curl -s https://codecov.io/bash) 
+          command: bash <(curl -s https://codecov.io/bash)
           name: Upload code coverage results
+      - store_test_results:
+          path: test-results
+
 
 workflows:
   main:
