@@ -13,11 +13,24 @@ def select(xs: np.ndarray, xs_ids: np.ndarray, selection_ids: np.ndarray) -> np.
         A selection of elements from ``xs``
 
     Examples:
-        >>> select(np.array([1, 2, 3]), np.array(['a', 'b', 'c']), np.array(['a']))
+
+        >>> select(\
+            np.array([1, 2, 3]), \
+            np.array(['a', 'b', 'c']), \
+            np.array(['a'])
+        )
         array([1])
-        >>> select(np.array([1, 2, 3]), np.array(['a', 'b', 'c']), np.array(['a', 'c']))
+        >>> select(\
+            np.array([1, 2, 3]), \
+            np.array(['a', 'b', 'c']), \
+            np.array(['a', 'c'])
+        )
         array([1, 3])
-        >>> select(np.array([1, 2, 3]), np.array(['a', 'b', 'c']), np.array(['a', 'c', 'a']))
+        >>> select(\
+            np.array([1, 2, 3]), \
+            np.array(['a', 'b', 'c']), \
+            np.array(['a', 'c', 'a'])
+        )
         array([1, 3, 1])
 
     """
