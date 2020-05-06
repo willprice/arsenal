@@ -7,6 +7,8 @@ jobs:
   build-and-test:
     executor: python/default
     steps:
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y zlib1g-dev libtiff-dev libjpeg-turbo8-dev
       - checkout
       - python/load-cache
       - python/install-deps
