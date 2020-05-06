@@ -26,10 +26,6 @@ def clip_to_html(
     Returns:
         String of HTML with a ``<video>`` tag and base64 encoded media.
         Useful for use with ``IPython.display.display`` to show videos.
-
-
-
-
     """
     if isinstance(clip, (np.ndarray, list)):
         clip = ImageSequenceClip(list(clip), fps=fps)
