@@ -17,19 +17,19 @@ def select(xs: np.ndarray, xs_ids: np.ndarray, selection_ids: np.ndarray) -> np.
         >>> select(\
             np.array([1, 2, 3]), \
             np.array(['a', 'b', 'c']), \
-            np.array(['a'])
+            np.array(['a']) \
         )
         array([1])
         >>> select(\
             np.array([1, 2, 3]), \
             np.array(['a', 'b', 'c']), \
-            np.array(['a', 'c'])
+            np.array(['a', 'c']) \
         )
         array([1, 3])
         >>> select(\
             np.array([1, 2, 3]), \
             np.array(['a', 'b', 'c']), \
-            np.array(['a', 'c', 'a'])
+            np.array(['a', 'c', 'a']) \
         )
         array([1, 3, 1])
 
