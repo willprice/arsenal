@@ -19,6 +19,9 @@ jobs:
       - run:
           command: make test
           name: Test
+      - run:
+          command: bash <(curl -s https://codecov.io/bash) 
+          name: Upload code coverage results
 
 workflows:
   main:
