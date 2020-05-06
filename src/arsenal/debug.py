@@ -1,7 +1,3 @@
-import ctypes
-import inspect
-
-
 def extract(source=None):
     """Copies the variables of the caller up to iPython. Useful for debugging.
 

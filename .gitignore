@@ -215,5 +215,5 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 
-/test-results*.xml
-/.converage*
+/test-results*
+/.coverage*
