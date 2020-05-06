@@ -1,6 +1,7 @@
 import pickle
 from pathlib import Path
-from typing import Any, Union
+from typing import Any
+from typing import Union
 
 
 def load_pickle(filepath: Union[str, Path]) -> Any:
@@ -12,11 +13,13 @@ def load_pickle(filepath: Union[str, Path]) -> Any:
     Returns:
         Contents of pickle.
     """
-    with open(filepath, 'rb') as f:
+    with open(filepath, "rb") as f:
         return pickle.load(f)
 
 
-def save_pickle(obj: Any, filepath: Union[str, Path], protocol=pickle.DEFAULT_PROTOCOL) -> None:
+def save_pickle(
+    obj: Any, filepath: Union[str, Path], protocol=pickle.DEFAULT_PROTOCOL
+) -> None:
     """
     Args:
         obj: The object to persist to disk
@@ -26,5 +29,5 @@ def save_pickle(obj: Any, filepath: Union[str, Path], protocol=pickle.DEFAULT_PR
     filepath = Path(filepath)
     directory = filepath.parent
     directory.mkdir(parents=True, exist_ok=True)
-    with open(filepath, 'wb') as f:
+    with open(filepath, "wb") as f:
         pickle.dump(obj, f, protocol=protocol)

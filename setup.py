@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 # Note: To use the 'upload' functionality of this file, you must:
 #   $ pip install twine
-
 import io
 import os
 import sys
 from shutil import rmtree
 
-from setuptools import setup, Command, find_packages
+from setuptools import Command
+from setuptools import find_packages
+from setuptools import setup
 
 _here = os.path.dirname(__file__)
 about = {}  # type: ignore
@@ -40,9 +40,7 @@ EXTRAS = {"torch": ["torch>=1.5.0", "torchvision>=0.6.0"]}
 # Import the README and use it as the long-description.
 # Note: this will only work if 'README.md' is present in your MANIFEST.in file!
 try:
-    with io.open(
-        os.path.join(_here, "README.md"), encoding="utf-8"
-    ) as f:  # type: ignore
+    with open(os.path.join(_here, "README.md"), encoding="utf-8") as f:  # type: ignore
         long_description = "\n" + f.read()
 except FileNotFoundError:
     long_description = about["__description__"]

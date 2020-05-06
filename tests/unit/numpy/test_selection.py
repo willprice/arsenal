@@ -1,9 +1,8 @@
 import hypothesis.strategies as st
-import pytest
-from hypothesis import given
 import numpy as np
-
+import pytest
 from arsenal.numpy import select
+from hypothesis import given
 
 
 def test_selecting_0_elements():
