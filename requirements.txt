@@ -5,7 +5,7 @@ moviepy==1.0.2
 mypy==0.770
 numpy==1.18.4
 pandas==1.0.3
-pillow-simd==7.0.0.post3
+pillow==7.0.0
 pytest==5.4.1
 pytest-cov==2.8.1
 scikit-learn==0.22.2
