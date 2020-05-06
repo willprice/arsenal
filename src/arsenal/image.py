@@ -1,12 +1,15 @@
 import base64
 import io
+from typing import List
 from typing import Optional
+from typing import Tuple
 
 import numpy as np
 from arsenal.collections import intersperse
 from PIL import Image
 
 _default_sep_color = (100, 100, 100)  # RGB (0-255)
+Color = Tuple[int, int, int]
 
 
 def resize_image(
@@ -29,7 +32,12 @@ def resize_image(
     return np.array(Image.fromarray(image).resize((width, height), resample=resample))
 
 
-def vstack_with_sep(rows, sep_width=3, sep_color=_default_sep_color, **kwargs):
+def vstack_with_sep(
+    rows: List[np.ndarray],
+    sep_width: int = 3,
+    sep_color: Color = _default_sep_color,
+    **kwargs,
+) -> np.ndarray:
     """Stack images on-top of one another with separator"""
     assert len(rows) > 0
     sep = np.ones((sep_width, rows[0].shape[1], 3), dtype=np.uint8)
@@ -37,7 +45,12 @@ def vstack_with_sep(rows, sep_width=3, sep_color=_default_sep_color, **kwargs):
     return np.vstack(intersperse(rows, sep, **kwargs))
 
 
-def hstack_with_sep(cols, sep_width=3, sep_color=_default_sep_color, **kwargs):
+def hstack_with_sep(
+    cols: List[np.ndarray],
+    sep_width: int = 3,
+    sep_color: Color = _default_sep_color,
+    **kwargs,
+) -> np.ndarray:
     """Stack images side-by-side with separator"""
     assert len(cols) > 0
     sep = np.ones((cols[0].shape[0], sep_width, 3), dtype=np.uint8)
