@@ -26,7 +26,7 @@ REQUIRED = [
     "numpy>=1.18.4",
     "pandas>=1.0.0",
     "scikit-learn>=0.22.2",
-    "pillow-simd>=7.0.0",
+    "pillow>=7.0.0",
 ]
 
 # What packages are optional?
